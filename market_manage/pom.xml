@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.xie</groupId>
+		<artifactId>market_parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>com.xie</groupId>
+	<artifactId>market_manage</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<!-- 依赖管理 -->
+	<dependencies>
+		<dependency>
+			<groupId>com.xie</groupId>
+			<artifactId>market_common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.2</version>
+		</dependency>
+
+	</dependencies>
+
+
+
+	<modules>
+		<module>market_manage_pojo</module>
+		<module>market_manage_mapper</module>
+		<module>market_manage_service</module>
+		<module>market_manage_web</module>
+	</modules>
+<!-- 
+	<pluginRepositories>
+		<pluginRepository>
+			<id> alfresco </id>
+			<url> https://artifacts.alfresco.com/nexus/content/repositories/public/ </url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<build>
+		配置插件
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat8-maven-plugin</artifactId>
+				<version>3.0-r1655215</version>
+				<configuration>
+					<port>8282</port>
+					<path>/</path>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build> -->
+
+
+</project>
