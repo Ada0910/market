@@ -13,6 +13,9 @@
         <dependent-module archiveName="market_manage_pojo-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/market_manage_pojo/market_manage_pojo">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="market_common-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/market_common/market_common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="market_manage_web"/>
         <property name="java-output-path" value="/market_manage_web/target/classes"/>
     </wb-module>

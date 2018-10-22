@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <table class="easyui-datagrid" id="itemList" title="商品列表" 
-       data-options="singleSelect:false,collapsible:true,pagination:true,url:'/item/list',method:'get',pageSize:30,toolbar:toolbar">
+       data-options="singleSelect:false,collapsible:true,pagination:true,url:'item/list',method:'get',pageSize:30,toolbar:toolbar">
     <thead>
         <tr>
         	<th data-options="field:'ck',checkbox:true"></th>
@@ -23,12 +23,12 @@
 
     function getSelectionsIds(){
     	var itemList = $("#itemList");
-    	var sels = itemList.datagrid("getSelections");
+    	var sels = itemList.datagrid("getSelections");//遍历多行的数据
     	var ids = [];
     	for(var i in sels){
-    		ids.push(sels[i].id);
+    		ids.push(sels[i].id);//将数据push进ids数组中
     	}
-    	ids = ids.join(",");
+    	ids = ids.join(",");//字符串数组转化为字符串
     	return ids;
     }
     

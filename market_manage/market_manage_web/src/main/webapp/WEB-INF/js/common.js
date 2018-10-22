@@ -25,7 +25,7 @@ var TT = TAOTAO = {
 		//指定上传文件参数名称
 		filePostName  : "uploadFile",
 		//指定上传文件请求的url。
-		uploadJson : '/pic/upload',
+		uploadJson : 'pic/upload',
 		//上传类型，分别为image、flash、media、file
 		dir : "image"
 	},
@@ -68,7 +68,7 @@ var TT = TAOTAO = {
     		var _ele = $(e);
     		_ele.siblings("div.pics").remove();
     		_ele.after('\
-    			<div class="pics">\
+    			<div class="pics ">\
         			<ul></ul>\
         		</div>');
     		// 回显图片
@@ -83,7 +83,7 @@ var TT = TAOTAO = {
         	//给“上传图片按钮”绑定click事件
         	$(e).click(function(){
         		var form = $(this).parentsUntil("form").parent("form");
-        		//打开图片上传窗口
+        		//打开图片上传窗口,multiimage多图片上传
         		KindEditor.editor(TT.kingEditorParams).loadPlugin('multiimage',function(){
         			var editor = this;
         			editor.plugin.multiImageDialog({
@@ -123,7 +123,7 @@ var TT = TAOTAO = {
     			    onOpen : function(){
     			    	var _win = this;
     			    	$("ul",_win).tree({
-    			    		url:'/item/cat/list',
+    			    		url:'item/cat/list',
     			    		animate:true,
     			    		onClick : function(node){
     			    			if($(this).tree("isLeaf",node.target)){
@@ -236,7 +236,7 @@ var TT = TAOTAO = {
 			var _self = $(this);
 			KindEditor.editor(TT.kingEditorParams).loadPlugin('image', function() {
 				this.plugin.imageDialog({
-					showRemote : false,
+					showRemote : true,
 					clickFn : function(url, title, width, height, border, align) {
 						var input = _self.siblings("input");
 						input.parent().find("img").remove();
