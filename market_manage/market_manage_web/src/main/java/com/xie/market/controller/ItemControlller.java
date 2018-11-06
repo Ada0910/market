@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xie.common.pojo.EUDataGridResult;
@@ -43,7 +44,7 @@ public class ItemControlller {
 		return result;
 	}
 
-	@RequestMapping("/item/save")
+	@RequestMapping(value="/item/save",method=RequestMethod.POST)
 	@ResponseBody
 	private Result createItem(TbItem item, String desc, String itemParam) throws Exception {
 

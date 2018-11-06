@@ -2,11 +2,11 @@
 <div class="easyui-panel" title="Nested Panel" data-options="width:'100%',minHeight:500,noheader:true,border:false" style="padding:10px;">
     <div class="easyui-layout" data-options="fit:true">
         <div data-options="region:'west',split:false" style="width:250px;padding:5px">
-            <ul id="contentCategoryTree" class="easyui-tree" data-options="url:'/content/category/list',animate: true,method : 'GET'">
+            <ul id="contentCategoryTree" class="easyui-tree" data-options="url:'content/category/list',animate: true,method : 'GET'">
             </ul>
         </div>
         <div data-options="region:'center'" style="padding:5px">
-            <table class="easyui-datagrid" id="contentList" data-options="toolbar:contentListToolbar,singleSelect:false,collapsible:true,pagination:true,method:'get',pageSize:20,url:'/content/query/list',queryParams:{categoryId:0}">
+            <table class="easyui-datagrid" id="contentList" data-options="toolbar:contentListToolbar,singleSelect:false,collapsible:true,pagination:true,method:'get',pageSize:20,url:'content/query/list',queryParams:{categoryId:0}">
 		    <thead>
 		        <tr>
 		            <th data-options="field:'id',width:30">ID</th>
@@ -48,7 +48,7 @@ var contentListToolbar = [{
     		return ;
     	}
     	TT.createWindow({
-			url : "/content-add"
+			url : "content-add"
 		}); 
     }
 },{
@@ -65,7 +65,7 @@ var contentListToolbar = [{
     		return ;
     	}
 		TT.createWindow({
-			url : "/content-edit",
+			url : "content-edit",
 			onLoad : function(){
 				var data = $("#contentList").datagrid("getSelections")[0];
 				$("#contentEditForm").form("load",data);
@@ -94,7 +94,7 @@ var contentListToolbar = [{
     	$.messager.confirm('确认','确定删除ID为 '+ids+' 的内容吗？',function(r){
     	    if (r){
     	    	var params = {"ids":ids};
-            	$.post("/content/delete",params, function(data){
+            	$.post("content/delete",params, function(data){
         			if(data.status == 200){
         				$.messager.alert('提示','删除内容成功!',undefined,function(){
         					$("#contentList").datagrid("reload");

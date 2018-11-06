@@ -188,11 +188,13 @@ var TT = TAOTAO = {
     closeCurrentWindow : function(){
     	$(".panel-tool-close").click();
     },
-    
+  
+    //生成表单的js
     changeItemParam : function(node,formId){
-    	$.getJSON("/item/param/query/itemcatid/" + node.id,function(data){
+    	$.getJSON("item/param/query/itemcatid/" + node.id,function(data){
 			  if(data.status == 200 && data.data){
 				 $("#"+formId+" .params").show();
+				 //把字符串解析成一个json对象
 				 var paramData = JSON.parse(data.data.paramData);
 				 var html = "<ul>";
 				 for(var i in paramData){
